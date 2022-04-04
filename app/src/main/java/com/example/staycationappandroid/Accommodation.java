@@ -22,7 +22,7 @@ public class Accommodation {
 
     public Accommodation() { }
 
-    public Accommodation(String title, ArrayList<String> image, Double lat, Double longitude, String city, String country, String locationDescription, String description, String type, String owner, String profile, Double price, ArrayList<String> amenities, Long rating, String availableStart, String availableEnd) {
+    public Accommodation(String title, ArrayList<String> image, Double lat, Double longitude, String city, String country, String locationDescription, String description, String type, String owner, String profile, Double price, ArrayList<String> amenities, Double rating, String availableStart, String availableEnd) {
         this.title = title;
         this.image = image;
         this.lat = lat;
@@ -145,11 +145,11 @@ public class Accommodation {
         this.amenities = amenities;
     }
 
-    public Long getRating() {
+    public Double getRating() {
         return rating;
     }
 
-    public void setRating(Long rating) {
+    public void setRating(Double rating) {
         this.rating = rating;
     }
 
