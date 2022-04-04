@@ -16,7 +16,7 @@ public class Accommodation {
     String profile;
     Double price;
     ArrayList<String> amenities;
-    Long rating;
+    Double rating;
     String availableStart;
     String availableEnd;
 
