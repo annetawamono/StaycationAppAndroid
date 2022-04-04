@@ -21,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
             //go to list page with the dates
 
             Intent intentDate = new Intent(MainActivity.this, listPage.class);
-            intentDate.putExtra("dateCheckIn", "2022-01-01");
-            intentDate.putExtra("dateCheckOut", "2022-01-10");
+            intentDate.putExtra("checkInDate", "2022-01-01");
+            intentDate.putExtra("checkOutDate", "2022-01-10");
             startActivity(intentDate);
         });
     }

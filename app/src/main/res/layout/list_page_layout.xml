@@ -19,12 +19,11 @@
 
             <ImageView
                 android:id="@+id/imgProduct"
-                tools:srcCompat="@drawable/ic_launcher_background"
                 android:layout_width="184dp"
                 android:layout_height="178dp"
+                android:background="@drawable/ic_launcher_background"
                 android:cropToPadding="false"
-                android:scaleType="fitStart"
-                android:visibility="visible" />
+                android:scaleType="fitStart" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -48,7 +47,6 @@
                     android:text="Infomation"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                     android:textColor="@color/black"
-
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
