@@ -8,18 +8,18 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rView"
-        android:layout_width="342dp"
-        android:layout_height="584dp"
+        android:layout_width="361dp"
+        android:layout_height="575dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="30dp"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtTitlePage"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/txtTitlePage"
