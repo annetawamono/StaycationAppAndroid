@@ -9,9 +9,11 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.database.FirebaseDatabase;
+
 public class listPage extends AppCompatActivity {
 
-    //private AccommodationAdapter adapter;
+    private AccommodationAdapter adapter;
     private RecyclerView rView;
     private TextView txtTitlePage;
 
@@ -32,7 +34,6 @@ public class listPage extends AppCompatActivity {
         txtTitlePage.setText(checkInDate + " to " + checkOutDate);
 
         //getting the information from DB
-        /*
         query = FirebaseDatabase.getInstance().getReference().child(category);
         FirebaseRecyclerOptions<Product> options = new FirebaseRecyclerOptions.Builder<Product>()
                 .setQuery(query, Product.class)
@@ -40,10 +41,10 @@ public class listPage extends AppCompatActivity {
 
         adapter = new ProductAdapter(options);
 
-        */
+
         rView = findViewById(R.id.rView);
         rView.setLayoutManager(new GridLayoutManager(this, 1));
-        //rView.setAdapter(adapter);
+        rView.setAdapter(adapter);
 
     }
 }
