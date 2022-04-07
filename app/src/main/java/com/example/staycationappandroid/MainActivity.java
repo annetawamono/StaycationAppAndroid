@@ -2,28 +2,43 @@ package com.example.staycationappandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.TextView;
+
+import com.google.android.material.datepicker.MaterialDatePicker;
+import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btn_nextActivity;
+    private Button btnDates;
+    private TextView idSelectedDates;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btn_nextActivity = findViewById(R.id.btn_nextActivity);
+        btnDates = findViewById(R.id.btnDates);
+        idSelectedDates = findViewById(R.id.idSelectedDates);
 
-        btn_nextActivity.setOnClickListener( view -> {
-            //go to list page with the dates
+        // Material date picker
+        MaterialDatePicker.Builder builder = MaterialDatePicker.Builder.dateRangePicker();
 
-            Intent intentDate = new Intent(MainActivity.this, listPage.class);
-            intentDate.putExtra("checkInDate", "2022-01-01");
-            intentDate.putExtra("checkOutDate", "2022-01-10");
-            startActivity(intentDate);
+        builder.setTitleText("Select your Check in and Check out date");
+
+        MaterialDatePicker materialDatePicker = builder.build();
+
+        btnDates.setOnClickListener(view -> {
+            materialDatePicker.show(getSupportFragmentManager(), "DATE_PICKER");
         });
+
+        materialDatePicker.addOnPositiveButtonClickListener(new MaterialPickerOnPositiveButtonClickListener() {
+            @Override
+            public void onPositiveButtonClick(Object selection) {
+                idSelectedDates.setText(materialDatePicker.getHeaderText());
+            }
+        });
+
     }
 }

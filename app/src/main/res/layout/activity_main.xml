@@ -7,13 +7,22 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/btn_nextActivity"
-        android:layout_width="141dp"
-        android:layout_height="68dp"
-        android:text="Button"
+        android:id="@+id/btnDates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Dates"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.188" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/idSelectedDates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/btnDates"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
