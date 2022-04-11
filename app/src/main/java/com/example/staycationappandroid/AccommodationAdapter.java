@@ -49,6 +49,11 @@ public class AccommodationAdapter extends FirebaseRecyclerAdapter<Accommodation,
             intentDetail.putExtra("info", vInfo);
             intentDetail.putExtra("rate", lUtilities.formatNumber(model.getRating()));
             intentDetail.putExtra("price", lUtilities.formatNumber(model.getPrice()));
+            intentDetail.putExtra("ownerName", model.getOwner());
+            intentDetail.putExtra("Address", model.getCity());
+            intentDetail.putExtra("amenities", model.getAmenities());
+            intentDetail.putExtra("longitude", Double.valueOf(model.getLongitude()).toString());
+            intentDetail.putExtra("latitude", Double.valueOf(model.getLat()).toString());
 
             view.getContext().startActivity(intentDetail);
         });

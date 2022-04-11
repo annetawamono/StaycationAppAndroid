@@ -52,5 +52,11 @@ dependencies {
     //Material Components
     implementation 'com.google.android.material:material:1.5.0'
 
+    //Image slider
+    implementation 'com.github.smarteist:autoimageslider:1.4.0'
+
+    //Map view
+    implementation 'com.google.android.gms:play-services-maps:16.0.0'
+
 
 }
