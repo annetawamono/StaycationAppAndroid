@@ -39,9 +39,8 @@ public class AccommodationAdapter extends FirebaseRecyclerAdapter<Accommodation,
         Glide.with(holder.itemView.getContext()).load(storageReference).into(holder.imgAccommodation);
 
         holder.txtTitle.setText(model.getTitle());
-        holder.txtInfo.setText(vInfo);
         holder.txtRate.setText(lUtilities.formatNumber(model.getRating()));
-        holder.txtPrice.setText("C$"+lUtilities.formatNumber(model.getPrice()));
+        holder.txtPrice.setText("C$ "+lUtilities.formatNumber(model.getPrice()));
 
         holder.btnDetail.setOnClickListener( view -> {
             Intent intentDetail = new Intent(view.getContext(), activity_details.class);
@@ -59,7 +58,6 @@ public class AccommodationAdapter extends FirebaseRecyclerAdapter<Accommodation,
 
         ImageView imgAccommodation;
         TextView txtTitle;
-        TextView txtInfo;
         TextView txtRate;
         TextView txtPrice;
         Button btnDetail;
@@ -69,7 +67,6 @@ public class AccommodationAdapter extends FirebaseRecyclerAdapter<Accommodation,
 
             imgAccommodation = itemView.findViewById(R.id.imgAccommodation);
             txtTitle = itemView.findViewById(R.id.txtTitle);
-            txtInfo = itemView.findViewById(R.id.txtInfo);
             txtRate = itemView.findViewById(R.id.txtRate);
             txtPrice = itemView.findViewById(R.id.txtPrice);
             btnDetail = itemView.findViewById(R.id.btnDetail);
