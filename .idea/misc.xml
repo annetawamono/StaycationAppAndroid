@@ -3,7 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Anneta/AndroidStudioProjects/StaycationAppAndroid/app/src/main/res/layout/activity_main.xml" value="0.19927536231884058" />
+        <entry key="app/src/main/res/drawable/container.xml" value="0.2135" />
+        <entry key="app/src/main/res/drawable/container_component.xml" value="0.2465" />
+        <entry key="app/src/main/res/drawable/container_whiteOpacity.xml" value="0.2465" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2465" />
+        <entry key="app/src/main/res/layout-sw600dp/list_page_layout.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_detail_page.xml" value="0.16576086956521738" />
+        <entry key="app/src/main/res/layout/activity_details.xml" value="0.1828774062816616" />
+        <entry key="app/src/main/res/layout/activity_details_page.xml" value="0.19701086956521738" />
+        <entry key="app/src/main/res/layout/activity_list_page.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.18115942028985507" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.16388044579533942" />
+        <entry key="app/src/main/res/layout/list_page_layout.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/list_page_layout_test.xml" value="0.37604166666666666" />
       </map>
     </option>
   </component>

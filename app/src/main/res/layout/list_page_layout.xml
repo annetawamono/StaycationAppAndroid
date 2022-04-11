@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="340dp"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="340dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:baselineAligned="false"
+        android:verticalScrollbarPosition="defaultPosition"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            android:layout_width="340dp"
+            android:layout_height="170dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imgAccommodation"
+                android:layout_width="145dp"
+                android:layout_height="155dp"
+
+                android:foregroundGravity="bottom|center_vertical"
+                android:keepScreenOn="false"
+                android:scaleType="fitXY"
+                app:shapeAppearanceOverlay="@style/RoundedSquare" />
+
+            <Space
+                android:id="@+id/space1"
+                android:layout_width="18dp"
+                android:layout_height="155dp"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:id="@+id/infoLayout"
+                android:layout_width="180dp"
+                android:layout_height="154dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txtTitle"
+                        android:layout_width="90dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="3"
+                        android:text="Title nonono nonoo nonon nono nonono nonon "
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="C$ 000.00"
+                        android:textAlignment="viewEnd"
+                        android:textColor="@color/red_400"
+                        android:textDirection="rtl"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="11dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imgRate"
+                        android:layout_width="35dp"
+                        android:layout_height="32dp"
+                        app:srcCompat="@drawable/icon_star" />
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="20" />
+
+                    <TextView
+                        android:id="@+id/txtRate"
+                        android:layout_width="130dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text="4.56"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/btnDetail"
+                    android:layout_width="175dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/red_400"
+                    android:text="BOOK NOW" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

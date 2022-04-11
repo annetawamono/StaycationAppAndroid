@@ -2,6 +2,7 @@ package com.example.staycationappandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -12,6 +13,7 @@ import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClic
 public class MainActivity extends AppCompatActivity {
 
     private Button btnDates;
+    private Button btnNextActivity;
     private TextView idSelectedDates;
 
     @Override
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btnDates = findViewById(R.id.btnDates);
+        btnNextActivity = findViewById(R.id.btnNextActivity);
         idSelectedDates = findViewById(R.id.idSelectedDates);
 
         // Material date picker
@@ -39,6 +42,13 @@ public class MainActivity extends AppCompatActivity {
                 idSelectedDates.setText(materialDatePicker.getHeaderText());
             }
         });
+
+        //changed to go to list_page
+        btnNextActivity.setOnClickListener(view -> {
+            Intent intentInfo = new Intent(MainActivity.this, listPage.class);
+            startActivity(intentInfo);
+        });
+
 
     }
 }
