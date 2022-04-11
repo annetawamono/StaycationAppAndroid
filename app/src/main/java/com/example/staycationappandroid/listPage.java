@@ -44,7 +44,7 @@ public class listPage extends AppCompatActivity {
         txtNuGests = findViewById(R.id.txtNuGests);
 
         //Showing the period selected before
-        txtTitlePage.setText("From: "+ lUtilities.formatDate(checkInDate) + " to " + lUtilities.formatDate(checkOutDate));
+        txtTitlePage.setText("From "+ lUtilities.formatDate(checkInDate) + " to " + lUtilities.formatDate(checkOutDate));
         txtNuGests.setText(nuGuests);
 
         //getting the information from DB

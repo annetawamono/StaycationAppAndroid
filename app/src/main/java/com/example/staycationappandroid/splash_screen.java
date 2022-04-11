@@ -13,7 +13,7 @@ public class splash_screen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-        getSupportActionBar().setTitle("");
+        getSupportActionBar().hide();
 
         //Calling the MainActivity
         Handler handle = new Handler();
