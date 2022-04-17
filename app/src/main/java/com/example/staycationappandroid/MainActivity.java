@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnDates;
     private Button btnNextActivity;
     private TextView idSelectedDates;
+    private TextView editGuests;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         btnDates = findViewById(R.id.btnDates);
         btnNextActivity = findViewById(R.id.btnNextActivity);
         idSelectedDates = findViewById(R.id.idSelectedDates);
+        editGuests = findViewById(R.id.editGuests);
 
         // Material date picker
         MaterialDatePicker.Builder builder = MaterialDatePicker.Builder.dateRangePicker();
@@ -46,6 +48,10 @@ public class MainActivity extends AppCompatActivity {
         //changed to go to list_page
         btnNextActivity.setOnClickListener(view -> {
             Intent intentInfo = new Intent(MainActivity.this, listPage.class);
+
+            intentInfo.putExtra("DATES", idSelectedDates.getText());
+            intentInfo.putExtra("GUESTS", editGuests.getText());
+
             startActivity(intentInfo);
         });
 
