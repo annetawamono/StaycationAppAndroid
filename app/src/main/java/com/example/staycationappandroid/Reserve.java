@@ -16,6 +16,8 @@ public class Reserve extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reserve);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         txtSorry = findViewById(R.id.txtSorry);
         imageView = findViewById(R.id.underConstruction);
 

@@ -2,11 +2,14 @@ package com.example.staycationappandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -17,10 +20,11 @@ import com.google.firebase.database.ValueEventListener;
 
 public class listPage extends AppCompatActivity {
 
-    private Query query, query2;
+    private Query query;
     private AccommodationAdapter adapter;
     private RecyclerView rView;
     private TextView txtTitlePage, txtNuGuests;
+    private ImageView icon_guests;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +33,6 @@ public class listPage extends AppCompatActivity {
 
         Utilities lUtilities = new Utilities();
 
-        getSupportActionBar().setTitle("Staycation App");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         String fullDate = getIntent().getStringExtra("DATES");
@@ -37,6 +40,7 @@ public class listPage extends AppCompatActivity {
 
         txtTitlePage = findViewById(R.id.txtTitlePage);
         txtNuGuests = findViewById(R.id.txtNuGuests);
+        icon_guests = findViewById(R.id.icon_guests);
 
         //Showing the period selected before
         //txtTitlePage.setText("From "+ lUtilities.formatDate(checkInDate) + " to " + lUtilities.formatDate(checkOutDate));
@@ -63,6 +67,12 @@ public class listPage extends AppCompatActivity {
         rView = findViewById(R.id.rView);
         rView.setLayoutManager(new GridLayoutManager(this, 1));
         rView.setAdapter(adapter);
+
+        //to list_page
+        icon_guests.setOnClickListener(view -> {
+            Intent intentAbout = new Intent(listPage.this, about_page.class);
+            startActivity(intentAbout);
+        });
 
     }
 

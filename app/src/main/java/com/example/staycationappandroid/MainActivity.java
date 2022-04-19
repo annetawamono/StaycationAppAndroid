@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //changed to go to list_page
+        //to list_page
         btnNextActivity.setOnClickListener(view -> {
             Intent intentInfo = new Intent(MainActivity.this, listPage.class);
 

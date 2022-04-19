@@ -1,6 +1,8 @@
 package com.example.staycationappandroid;
 
 import android.content.Intent;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -42,19 +44,37 @@ public class AccommodationAdapter extends FirebaseRecyclerAdapter<Accommodation,
         holder.txtRate.setText(lUtilities.formatNumber(model.getRating()));
         holder.txtPrice.setText("C$ "+lUtilities.formatNumber(model.getPrice()));
 
+        //Loading the images array and removing Null values
+        ArrayList <String> dArrayImages = new ArrayList<String>();
+        for (String item : model.getImage()) {
+            if(item != null && !TextUtils.isEmpty(item)){
+                System.out.println(item);
+                dArrayImages.add(item);
+            }
+        }
+
+        //Loading the amenities array and removing null values
+        ArrayList <String> Amenities = new ArrayList<String>();
+        for (String item : model.getAmenities()) {
+            if(item != null && !TextUtils.isEmpty(item)){
+                //System.out.println(item);
+                Amenities.add(item);
+            }
+        }
+
         holder.btnDetail.setOnClickListener( view -> {
             Intent intentDetail = new Intent(view.getContext(), activity_details.class);
-            intentDetail.putExtra("image", (model.getImage()));
             intentDetail.putExtra("title", model.getTitle());
             intentDetail.putExtra("info", vInfo);
             intentDetail.putExtra("rate", lUtilities.formatNumber(model.getRating()));
             intentDetail.putExtra("price", lUtilities.formatNumber(model.getPrice()));
             intentDetail.putExtra("ownerName", model.getOwner());
             intentDetail.putExtra("Address", model.getCity());
-            intentDetail.putExtra("amenities", model.getAmenities());
+            intentDetail.putExtra("amenities", Amenities);
             intentDetail.putExtra("longitude", Double.valueOf(model.getLongitude()).toString());
             intentDetail.putExtra("latitude", Double.valueOf(model.getLat()).toString());
-
+            intentDetail.putExtra("city",model.getCity());
+            intentDetail.putExtra("imageURL",dArrayImages);
             view.getContext().startActivity(intentDetail);
         });
     }

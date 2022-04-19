@@ -10,33 +10,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
-        <com.smarteist.autoimageslider.SliderView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/sliderView"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:sliderAnimationDuration="600"
-            app:sliderAutoCycleDirection="back_and_forth"
-            app:sliderAutoCycleEnabled="true"
-            app:sliderIndicatorAnimationDuration="600"
-            app:sliderIndicatorGravity="center_horizontal|bottom"
-            app:sliderIndicatorMargin="15dp"
-            app:sliderIndicatorOrientation="horizontal"
-            app:sliderIndicatorPadding="3dp"
-            app:sliderIndicatorRadius="2dp"
-            app:sliderIndicatorSelectedColor="#5A5A5A"
-            app:sliderIndicatorUnselectedColor="#FFF"
-            app:sliderScrollTimeInSec="2">
+            android:layout_height="300dp"
+            android:src="@drawable/picone">
 
-        </com.smarteist.autoimageslider.SliderView>
-
-
-
-
-
+        </androidx.recyclerview.widget.RecyclerView>
 
         <TextView
             android:id="@+id/txtName"
@@ -47,6 +27,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="20dp"
+            android:fontFamily="@font/nunito_sans"
             android:text="jhvsgfldb uisbvali iefbsclivh lhh">
         </TextView>
 
@@ -86,16 +67,19 @@
             android:layout_marginRight="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:text="200 CAD">
+            android:textColor="@color/red_400"
+            android:fontFamily="@font/nunito_sans"
+            android:text="C$ 200.00">
         </TextView>
 
-        <com.google.android.material.divider.MaterialDivider
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_margin="2dp">
-        </com.google.android.material.divider.MaterialDivider>
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_margin="2dp">
 
-        <TextView
+            </com.google.android.material.divider.MaterialDivider>
+
+            <TextView
             android:id="@+id/txtHost"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -137,18 +121,21 @@
             android:layout_marginTop="10dp"
             android:text="Pets Allowed">
         </TextView>
-        <TextView
-            android:id="@+id/txtparking"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            style="bold"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="10dp"
-            android:text="Free Parking Available">
-        </TextView>
-        <TextView
+
+            <TextView
+                android:id="@+id/txtparking"
+                style="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:text="Free Parking Available"
+                android:textSize="14sp">
+
+            </TextView>
+
+            <TextView
             android:id="@+id/txtExhost"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -160,13 +147,13 @@
             android:text="Wi-Fi Available">
         </TextView>
 
-
         <Button
-            android:id="@+id/btnAmenities"
+            android:id="@+id/textAmenity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:layout_gravity="center"
+            android:backgroundTint="@color/red_400"
             android:text="Show all Amenities">
 
         </Button>
@@ -180,45 +167,57 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="10dp"
-            android:text="Where you'll be...">
+            android:text="Where you'll be..."
+            android:fontFamily="@font/nunito_sans">
         </TextView>
 
-        <ImageView
-            android:id="@+id/mapView"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:src="@drawable/andmap"
-            android:layout_margin="8dp">
-
-        </ImageView>
         <TextView
-            android:id="@+id/txtAdults"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:gravity="center_horizontal"
-            android:textAlignment="gravity"
-            android:inputType="number"
-            android:text="No. of Adults"
-            android:layout_gravity="center"/>
+            android:id="@+id/txtMap"
+            android:layout_width="150dp"
+            android:layout_height="121dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_gravity="center"
+            android:background="@drawable/andmap"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp">
 
-        <TextView
-            android:id="@+id/txtChildren"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:gravity="center_horizontal"
-            android:textAlignment="gravity"
-            android:inputType="number"
-            android:text="No. of Children"
-            android:layout_gravity="center"/>
+        </TextView>
 
-        <Button
+            <EditText
+                android:id="@+id/txtAdults"
+                android:layout_width="116dp"
+                android:layout_height="43dp"
+                android:layout_gravity="center"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:inputType="number"
+                android:text="No. of Adults : "
+                android:textAlignment="gravity"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/txtChildren"
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:inputType="number"
+                android:text="No. of Children : "
+                android:textAlignment="gravity"
+                android:textSize="14sp" />
+
+            <Button
             android:id="@+id/btnReserve"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:layout_gravity="center"
+            android:backgroundTint="@color/red_400"
             android:text="Reserve"
             android:textStyle="bold">
 
