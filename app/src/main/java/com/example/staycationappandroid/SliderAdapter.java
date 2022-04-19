@@ -5,49 +5,49 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.smarteist.autoimageslider.SliderViewAdapter;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
-public class SliderAdapter extends SliderViewAdapter<SliderAdapter.Holder> {
+import com.bumptech.glide.Glide;
+import com.google.firebase.storage.FirebaseStorage;
 
-    //integer Array for images
-    int[] images;
+import java.util.ArrayList;
 
-    //constructor for adapter class
-    public SliderAdapter(int[] images){
+public class SliderAdapter extends RecyclerView.Adapter<SliderAdapter.ViewHolder> {
+
+    ArrayList<String> images = new ArrayList<>();
+
+    public SliderAdapter(ArrayList<String> images) {
         this.images = images;
     }
 
-    //Implemented methods
+    @NonNull
     @Override
-    public Holder onCreateViewHolder(ViewGroup parent) {
-        //inflating the layout
-        View view = LayoutInflater.from(parent.getContext())
-        .inflate(R.layout.slider,parent,false);
-        return new Holder(view);
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.slider,parent,false);
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(Holder viewHolder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        //setting images according to the position
-        viewHolder.imageView.setImageResource(images[position]);
+        //Loading images url from firebase and displaying with glide
+        Glide.with(holder.itemView.getContext()).load(FirebaseStorage.getInstance().getReferenceFromUrl(images.get(position))).into(holder.sliderView);
     }
 
     @Override
-    public int getCount() {
-        return images.length;
+    public int getItemCount() {
+        return images.size();
     }
 
+    class ViewHolder extends RecyclerView.ViewHolder{
 
-    public class Holder extends SliderViewAdapter.ViewHolder{
+            ImageView sliderView;
 
-        ImageView imageView;
+            public  ViewHolder(@NonNull View itemView){
+                super(itemView);
 
-        //constructor for holder class
-        public Holder(View itemView){
-            super(itemView);
-            imageView = itemView.findViewById(R.id.imageView);
-
+                sliderView = itemView.findViewById(R.id.imageSlider);
+            }
         }
-    }
 }

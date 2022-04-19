@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         idSelectedDates = findViewById(R.id.idSelectedDates);
         editGuests = findViewById(R.id.editGuests);
 
+        getSupportActionBar().hide();
+
         // Material date picker
         MaterialDatePicker.Builder builder = MaterialDatePicker.Builder.dateRangePicker();
 
@@ -45,12 +47,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //changed to go to list_page
+        //to list_page
         btnNextActivity.setOnClickListener(view -> {
             Intent intentInfo = new Intent(MainActivity.this, listPage.class);
 
             intentInfo.putExtra("DATES", idSelectedDates.getText());
-            intentInfo.putExtra("GUESTS", editGuests.getText());
+            intentInfo.putExtra("GUESTS", editGuests.getText().toString());
 
             startActivity(intentInfo);
         });

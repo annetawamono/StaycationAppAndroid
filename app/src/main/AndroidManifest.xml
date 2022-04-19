@@ -2,10 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.staycationappandroid">
 
-
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,28 +16,8 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/map_key">
-        </meta-data>
+            android:value="@string/map_key"></meta-data>
 
-        <activity
-            android:name=".activity_details"
-            android:parentActivityName=".listPage"
-            android:exported="false" >
-        <intent-filter>
-            <action android:name="com.example.ancientbooke.activity_details" />
-
-            <category android:name="android.intent.category.DEFAULT" />
-        </intent-filter>
-        </activity>
-
-        <activity
-            android:name=".listPage"
-            android:launchMode="singleTop"
-            android:parentActivityName=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
         <activity
             android:name=".splash_screen"
             android:exported="true">
@@ -47,27 +27,31 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name=".mapview"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.example.ancientbooke.mapview" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".listPage"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".activity_details"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:parentActivityName=".listPage"/>
         <activity
             android:name=".Reserve"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.example.ancientbooke.Reserve" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
+            android:exported="false"
+            android:parentActivityName=".activity_details"/>
+        <activity
+            android:name=".Amenities"
+            android:exported="false"
+            android:parentActivityName=".activity_details"/>
+        <activity
+            android:name=".about_page"
+            android:exported="false"
+            android:parentActivityName=".listPage"/>
     </application>
-
 
 </manifest>
